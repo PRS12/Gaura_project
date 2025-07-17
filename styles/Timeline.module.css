@@ -1,0 +1,135 @@
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timelineContent {
+  display: flex;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  background: #fff;
+  border: 3px solid #FF69B4;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 22px;
+  color: #FF69B4;
+  box-shadow: 0 4px 8px rgba(147, 112, 219, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #FFB5E8, #B5EAEA);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icon:hover {
+  background: #fff;
+  color: #FFB5E8;
+  transform: scale(1.1);
+  border-color: transparent;
+}
+
+.icon:hover::before {
+  opacity: 1;
+}
+
+.textContent {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  flex-grow: 1;
+  box-shadow: 0 4px 15px rgba(147, 112, 219, 0.1);
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #FF69B4, #9370DB) 1;
+  position: relative;
+}
+
+.connectorLine {
+  position: absolute;
+  left: 22px;
+  top: 45px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #FF69B4 0%, #9370DB 100%);
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 4px rgba(147, 112, 219, 0.2));
+}
+
+.timeText {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.imageContainer {
+  margin-top: 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 4px solid;
+  border-image: linear-gradient(45deg, #FF69B4, #9370DB) 1;
+  box-shadow: 0 6px 20px rgba(147, 112, 219, 0.2);
+  position: relative;
+  padding: 8px;
+  background: #fff;
+  aspect-ratio: 3/2;
+  display: block;
+}
+
+.imageContainer > span {
+  position: unset !important;
+}
+
+.timelineImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  will-change: transform;
+  position: relative !important;
+}
+
+.timelineContent {
+  will-change: transform, opacity;
+}
+
+.icon {
+  will-change: transform;
+  cursor: pointer;
+}
+
+.connectorLine {
+  will-change: transform, height;
+  transform-origin: top;
+}
