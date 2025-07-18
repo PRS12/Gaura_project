@@ -89,12 +89,12 @@
 
 .timeText {
   color: #6b7280;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 .imageContainer {
   margin-top: 1.5rem;
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
   border: 4px solid;
   border-image: linear-gradient(45deg, #FF69B4, #9370DB) 1;

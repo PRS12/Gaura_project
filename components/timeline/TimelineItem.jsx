@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaBaby, FaSmile, FaWalking, FaBirthdayCake } from 'react-icons/fa';
+import { SiGithubsponsors } from "react-icons/si";
 import styles from '../../styles/Timeline.module.css';
 
 const TimelineItem = ({ item, isLast }) => (
@@ -20,6 +21,7 @@ const TimelineItem = ({ item, isLast }) => (
         {item.icon === 'baby' && <FaBaby />}
         {item.icon === 'smile' && <FaSmile />}
         {item.icon === 'walking' && <FaWalking />}
+        {item.icon === 'View' && <SiGithubsponsors />}
         {item.icon === 'cake' && <FaBirthdayCake />}
       </motion.div>
       <motion.div 
@@ -79,7 +81,7 @@ const TimelineItem = ({ item, isLast }) => (
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.7 }}
       />
-    )}
+    )}  
   </motion.div>
 );
 
