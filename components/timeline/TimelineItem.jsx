@@ -1,17 +1,31 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { FaBaby, FaSmile, FaWalking, FaBirthdayCake } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBaby, FaSmile, FaWalking, FaBirthdayCake, FaEye ,FaDownload} from 'react-icons/fa';
 import { SiGithubsponsors } from "react-icons/si";
 import styles from '../../styles/Timeline.module.css';
+import { useState } from 'react';
 
-const TimelineItem = ({ item, isLast }) => (
-  <motion.div 
-    className={styles.timelineItem}
-    initial={{ opacity: 0, x: -50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, ease: "easeOut" }}
-  >
+const TimelineItem = ({ item, isLast }) => {
+  const [isImageOpen, setImageOpen] = useState(false);
+  const [noteText, setNoteText] = useState('');
+
+  const handleImageClick = () => {
+    setImageOpen(!isImageOpen);
+  };
+
+  const handleNoteChange = (e) => {
+    e.stopPropagation();
+    setNoteText(e.target.value);
+  };
+  
+  return (
+    <motion.div 
+      className={styles.timelineItem}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
     <div className={styles.timelineContent}>
       <motion.div 
         className={styles.icon}
@@ -21,7 +35,7 @@ const TimelineItem = ({ item, isLast }) => (
         {item.icon === 'baby' && <FaBaby />}
         {item.icon === 'smile' && <FaSmile />}
         {item.icon === 'walking' && <FaWalking />}
-        {item.icon === 'View' && <SiGithubsponsors />}
+        {item.icon === 'View' && <FaEye />}
         {item.icon === 'cake' && <FaBirthdayCake />}
       </motion.div>
       <motion.div 
@@ -61,6 +75,22 @@ const TimelineItem = ({ item, isLast }) => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
+            <div className={styles.imageActions}>
+              <motion.button 
+                className={styles.actionButton}
+                whileHover={{ scale: 1.1 }}
+                onClick={() => handleImageClick()}
+              >
+                <FaEye />
+              </motion.button>
+              <motion.button 
+                className={styles.actionButton}
+                whileHover={{ scale: 1.1 }}
+                onClick={() => window.open(item.image, '_blank')}
+              >
+                <FaDownload />
+              </motion.button>
+            </div>
             <Image 
               src={item.image}
               alt={item.title}
@@ -71,6 +101,49 @@ const TimelineItem = ({ item, isLast }) => (
             />
           </motion.div>
         )}
+        <AnimatePresence>
+          {isImageOpen && (
+            <motion.div 
+              className={styles.modal}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleImageClick}
+            >
+              <motion.div 
+                className={styles.modalContent}
+                initial={{ x: '100%', opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: '100%', opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 500 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className={styles.modalImageWrapper}>
+                  <Image 
+                    src={item.image}
+                    alt={item.title}
+                    width={800}
+                    height={800}
+                    className={styles.modalImage}
+                  />
+                  <motion.div 
+                    className={styles.modalTextBox}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <textarea
+                      value={noteText}
+                      onChange={handleNoteChange}
+                      placeholder="Write your notes here..."
+                      className={styles.modalTextArea}
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
     {!isLast && (
@@ -82,7 +155,8 @@ const TimelineItem = ({ item, isLast }) => (
         transition={{ duration: 0.5, delay: 0.7 }}
       />
     )}  
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default TimelineItem;

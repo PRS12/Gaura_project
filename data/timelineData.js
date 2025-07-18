@@ -20,7 +20,7 @@ const timelineData = [
     title: "First Appreance",
     date: "December 2023",
     description: "the First look of my angel",
-    icon: "view",
+    icon: "View",
     image: "/images/first_look.jpeg"
   },
 //   {

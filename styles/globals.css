@@ -42,7 +42,7 @@ body::before {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1500px;
   margin: 2rem 0 2rem 2rem;
   padding: 2rem;
   background-color: #f4d03f;
@@ -52,11 +52,11 @@ body::before {
     radial-gradient(circle at 0% 100%, #e4c025 2px, transparent 2px),
     radial-gradient(circle at 100% 0%, #e4c025 2px, transparent 2px),
     radial-gradient(circle at 100% 100%, #e4c025 2px, transparent 2px);
-  background-size: 20px 20px;
+  background-size: 40px 20px;
   position: relative;
-  border: 12px solid #fff;
+  /* border: 1px solid #fff; */
   box-shadow: 
-    0 0 0 2px #f4d03f,
+    0 0 0 10  px #f4d03f,
     0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
@@ -67,7 +67,7 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(120deg, #FF69B4, #9370DB);
+  background: linear-gradient(180deg, #7869ff, #9370DB);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -82,7 +82,7 @@ h1::after {
   left: 0;
   width: 150px;
   height: 4px;
-  background: linear-gradient(90deg, #FF69B4, #9370DB);
+  background: linear-gradient(120deg, #FF69B4, #9370DB);
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(147, 112, 219, 0.2);
 }
