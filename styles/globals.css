@@ -1,19 +1,13 @@
 :root {
-  --primary-color: #3b82f6;
-  --background-color: #f4d03f;
+  --primary-color: #9f3bf6;
+  --background-color: #7bf43f;
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #f4d03f;
-  background-image: 
-    radial-gradient(circle at 50% 50%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 0% 0%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 0% 100%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 100% 0%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 100% 100%, #e4c025 2px, transparent 2px);
+  background-color: #ffff;
   background-size: 20px 20px;
   position: relative;
 }
@@ -25,18 +19,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    repeating-conic-gradient(
-      from 0deg,
-      rgba(244, 208, 63, 0.3) 0deg 30deg,
-      rgba(241, 196, 15, 0.3) 30deg 60deg,
-      rgba(230, 181, 12, 0.3) 60deg 90deg
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(248, 219, 98, 0.2) 0px 2px,
-      rgba(244, 208, 63, 0.2) 2px 4px
-    );
+  background: #ffff;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
@@ -45,13 +28,7 @@ body::before {
   max-width: 1500px;
   margin: 2rem 0 2rem 2rem;
   padding: 2rem;
-  background-color: #f4d03f;
-  background-image: 
-    radial-gradient(circle at 50% 50%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 0% 0%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 0% 100%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 100% 0%, #e4c025 2px, transparent 2px),
-    radial-gradient(circle at 100% 100%, #e4c025 2px, transparent 2px);
+  background-color: #ffff;
   background-size: 40px 20px;
   position: relative;
   /* border: 1px solid #fff; */

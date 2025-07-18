@@ -111,7 +111,7 @@
   transition: transform 0.3s ease;
   border: 3px dotted #9370DB;
   animation: borderDash 15s linear infinite;
-  box-shadow: 0 6px 20px rgba(147, 112, 219, 0.2);
+  box-shadow: 1 6px 20px rgba(147, 112, 219, 0.2);
   position: relative;
   padding: 6px;
   background: #efedc7;
@@ -169,7 +169,7 @@
   border-radius: 8px;
   padding: 20px;
   overflow: hidden;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
