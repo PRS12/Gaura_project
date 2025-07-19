@@ -77,8 +77,8 @@
   flex-grow: 2;
   box-shadow: 0 4px 15px rgba(147, 112, 219, 0.1);
   position: relative;
-  border-color: #19b385e6 ;
-  border: 3pcx dotted #19b385e6;
+  border-color:  #a4f114e3 ;
+  border: 4pcx dotted  #a4f114e3;
   animation: borderDash 15s linear infinite;
 }
 
@@ -93,7 +93,7 @@
   border-radius: 4px;
   opacity: 0.8;
   filter: drop-shadow(0 3px 4px rgba(147, 112, 219, 0.2));
-  border-left: 3px dotted #19b385e6 ;
+  border-left: 3px dotted #a4f114e3;
   background: transparent;
   animation: borderDash 15s linear infinite;
 }
@@ -109,7 +109,8 @@
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  border: 3px dotted #19b385e6 ;
+  border: 3px dotted #a4f114e3;
+  border-radius: 4px;
   animation: borderDash 15s linear infinite;
   box-shadow: 1 6px 20px rgba(213, 243, 94, 0.2);
   position: relative;
@@ -165,7 +166,7 @@
   position: relative;
   width: 600px;
   height: 600px;
-  background: #fff;
+  background: linear-gradient(180deg, #f1ea14e6, #a4f114e3);
   border-radius: 8px;
   padding: 20px;
   overflow: hidden;
@@ -211,7 +212,7 @@
   padding: 15px;
   border-radius: 8px;
   width: 100%;
-  border: 2px dotted #19b385e6 ;
+  border: 4px dotted #19b385e6 ;
   animation: borderDash 15s linear infinite;
 }
 
@@ -222,14 +223,14 @@
   border: none;
   background: transparent;
   font-size: 1rem;
-  color: #333;
+  color: linear-gradient(180deg, #f1ea14e6, #a4f114e3);
   resize: vertical;
   font-family: inherit;
   outline: none;
 }
 
 .modalTextArea::placeholder {
-  color: #19b385e6 ;
+  color: linear-gradient(180deg, #f1ea14e6, #a4f114e3) ;
   opacity: 0.6;
 }
 
@@ -273,20 +274,20 @@
 
 @keyframes borderDash {
   0% {
-    border-color: #19b385e6 ;
+    border-color:  #a4f114e3;
   }
   25% {
-    border-color: #19b385e6;
+    border-color: #a4f114e3;
   }
   50% {
-    border-color: #19b385e6;;
+    border-color: #a4f114e3;
   }
   75% {
-    border-color: #19b385e6;;
+    border-color: #a4f114e3;
   }
   100% {
-    border-color: #19b385e6;
-  }
+    border-color: #a4f114e3;
+    }
 }
 
 @keyframes fadeInDots {
