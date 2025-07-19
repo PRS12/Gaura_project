@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-image: url('/public/images/crayon_background.jpg');  /* You'll need to add this image to your public folder */
+  background-image: url('/images/crayon_background.jpg');  /* You'll need to add this image to your public folder */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -30,7 +30,7 @@ body::before {
   max-width: 1500px;
   margin: 2rem 0 2rem 2rem;
   padding: 2rem;
-  background-color: #ffff;
+  /* background-color: #ffff; */
   background-size: 40px 20px;
   position: relative;
   /* border: 1px solid #fff; */

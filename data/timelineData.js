@@ -10,7 +10,7 @@ const timelineData = [
   {
     id: 2,
     title: "First Smile",
-    date: "11 October 2024",
+    date: "October 11 2024",
     description: "the First day with Dadi.",
     icon: "smile",
     image: "/images/first_smile.jpeg"
@@ -18,7 +18,7 @@ const timelineData = [
   {
     id: 3,
     title: "First Appreance",
-    date: "December 2023",
+    date: "October 25 2024",
     description: "the First look of my angel",
     icon: "View",
     image: "/images/first_look.jpeg"
