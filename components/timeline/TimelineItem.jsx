@@ -1,15 +1,17 @@
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBaby, FaSmile, FaWalking, FaBirthdayCake, FaEye ,FaDownload} from 'react-icons/fa';
+import { FaBaby, FaSmile, FaWalking, FaBirthdayCake, FaEye ,FaDownload,FaCaravan,FaCarAlt,FaBahai} from 'react-icons/fa';
 import { SiGithubsponsors } from "react-icons/si";
 import styles from '../../styles/Timeline.module.css';
 import { useState } from 'react';
 
 const TimelineItem = ({ item, isLast }) => {
   const [isImageOpen, setImageOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
   const [noteText, setNoteText] = useState('');
 
-  const handleImageClick = () => {
+  const handleImageClick = (imageSrc = item.image) => {
+    setSelectedImage(imageSrc);
     setImageOpen(!isImageOpen);
   };
 
@@ -35,8 +37,11 @@ const TimelineItem = ({ item, isLast }) => {
         {item.icon === 'baby' && <FaBaby />}
         {item.icon === 'smile' && <FaSmile />}
         {item.icon === 'walking' && <FaWalking />}
+        {item.icon === 'walking' && <FaWalking />}
         {item.icon === 'View' && <FaEye />}
-        {item.icon === 'cake' && <FaBirthdayCake />}
+        {item.icon === 'Vacation' && <FaCaravan/>}
+        {item.icon === 'Drive' && <FaCarAlt />}
+        {item.icon === 'Celebrate' && <FaBahai />}
       </motion.div>
       <motion.div 
         className={styles.textContent}
@@ -67,37 +72,95 @@ const TimelineItem = ({ item, isLast }) => {
         >
           {item.description}
         </motion.p>
-                {item.image && (
+        {(item.images || item.image) && (
+          <div className={styles.imagesContainer}>
+            {item.images ? (
+              // Multiple images
+              item.images.map((imageSrc, index) => (
+                <motion.div 
+                  key={index}
+                  className={styles.imageContainer}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                >
+                  <div className={styles.imageActions}>
+                    <motion.button 
+                      className={styles.actionButton}
+                      whileHover={{ scale: 1.1 }}
+                      onClick={() => handleImageClick(imageSrc)}
+                    >
+                      <FaEye />
+                    </motion.button>
+                    <motion.button 
+                      className={styles.actionButton}
+                      whileHover={{ scale: 1.1 }}
+                      onClick={() => window.open(imageSrc, '_blank')}
+                    >
+                      <FaDownload />
+                    </motion.button>
+                  </div>
+                  <Image 
+                    src={imageSrc}
+                    alt={`${item.title} - ${index + 1}`}
+                    width={600}
+                    height={400}
+                    className={styles.timelineImage}
+                    priority={item.id === 1 && index === 0}
+                  />
+                </motion.div>
+              ))
+            ) : (
+              // Single image (backward compatibility)
+              <motion.div 
+                className={styles.imageContainer}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <div className={styles.imageActions}>
+                  <motion.button 
+                    className={styles.actionButton}
+                    whileHover={{ scale: 1.1 }}
+                    onClick={() => handleImageClick(item.image)}
+                  >
+                    <FaEye />
+                  </motion.button>
+                  <motion.button 
+                    className={styles.actionButton}
+                    whileHover={{ scale: 1.1 }}
+                    onClick={() => window.open(item.image, '_blank')}
+                  >
+                    <FaDownload />
+                  </motion.button>
+                </div>
+                <Image 
+                  src={item.image}
+                  alt={item.title}
+                  width={600}
+                  height={400}
+                  className={styles.timelineImage}
+                  priority={item.id === 1}
+                />
+              </motion.div>
+            )}
+          </div>
+        )}
+        {item.video && (
           <motion.div 
-            className={styles.imageContainer}
+            className={styles.videoContainer}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <div className={styles.imageActions}>
-              <motion.button 
-                className={styles.actionButton}
-                whileHover={{ scale: 1.1 }}
-                onClick={() => handleImageClick()}
-              >
-                <FaEye />
-              </motion.button>
-              <motion.button 
-                className={styles.actionButton}
-                whileHover={{ scale: 1.1 }}
-                onClick={() => window.open(item.image, '_blank')}
-              >
-                <FaDownload />
-              </motion.button>
-            </div>
-            <Image 
-              src={item.image}
-              alt={item.title}
-              width={600}
-              height={400}
-              className={styles.timelineImage}
-              priority={item.id === 1}
+            <video
+              src={item.video}
+              title={item.title}
+              className={styles.videoPlayer}
+              controls
             />
           </motion.div>
         )}
@@ -120,7 +183,7 @@ const TimelineItem = ({ item, isLast }) => {
               >
                 <div className={styles.modalImageWrapper}>
                   <Image 
-                    src={item.image}
+                    src={selectedImage}
                     alt={item.title}
                     width={800}
                     height={800}

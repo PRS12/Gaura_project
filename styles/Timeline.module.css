@@ -34,7 +34,7 @@
   align-items: center;
   flex-shrink: 0;
   font-size: 22px;
-  color: #19b385e6 ;
+  color: #7e8df1e6;
   box-shadow: 0 4px 8px rgba(147, 112, 219, 0.2);
   transition: all 0.3s ease;
   position: relative;
@@ -70,7 +70,7 @@
 }
 
 .textContent {
-  background: linear-gradient(90deg, #19b385e6 20%, #61d2b9e6 50%);
+  background: linear-gradient(90deg, #7e8df1e6 20%, #7e8df1e6 50%);
   backdrop-filter: blur(5px);
   padding: 20px;
   border-radius: 15px;
@@ -103,6 +103,13 @@
   font-size: 1.5rem;
 }
 
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
 .imageContainer {
   margin-top: 1.5rem;
   border-radius: 5px;
@@ -118,6 +125,25 @@
   background: #efedc7;
   aspect-ratio: 3/2;
   display: block;
+}
+
+.videoContainer {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3px dotted #a4f114e3;
+  animation: borderDash 15s linear infinite;
+  box-shadow: 1px 6px 20px rgba(213, 243, 94, 0.2);
+  position: relative;
+  padding: 6px;
+  background: #efedc7;
+  aspect-ratio: 16/9;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
 .imageContainer > span {
@@ -136,6 +162,11 @@
 
 .timelineContent {
   will-change: transform, opacity;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
 }
 
 .icon {
@@ -166,7 +197,7 @@
   position: relative;
   width: 600px;
   height: 600px;
-  background: linear-gradient(180deg, #f1ea14e6, #a4f114e3);
+  background: linear-gradient(180deg, #f17014e6, #f17414e3);
   border-radius: 8px;
   padding: 20px;
   overflow: hidden;
@@ -174,7 +205,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px dotted #19b385e6 ;
+  border: 4px dotted #7e8df1e6 ;
   animation: borderDash 15s linear infinite;
   margin-right: 50px;
 }
@@ -274,20 +305,20 @@
 
 @keyframes borderDash {
   0% {
-    border-color:  #a4f114e3;
+    border-color:  #7e8df1e6;
   }
   25% {
-    border-color: #a4f114e3;
+    border-color: #7e8df1e6;
   }
   50% {
-    border-color: #a4f114e3;
+    border-color: #7e8df1e6;
   }
   75% {
-    border-color: #a4f114e3;
+    border-color: #7e8df1e6;
   }
   100% {
-    border-color: #a4f114e3;
-    }
+    border-color: #7e8df1e6;
+  }
 }
 
 @keyframes fadeInDots {
