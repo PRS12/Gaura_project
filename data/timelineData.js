@@ -34,7 +34,7 @@ const timelineData = [
     video:"/videos/radha_rani.mp4"
   },
   {id:4,
-    title: "First Steps",
+    title: "Mundan Ceremony",
     date: "June 10 2025",
     description: "Mundan Ceremony Video",
     icon: "Celebrate",
