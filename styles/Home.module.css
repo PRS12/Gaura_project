@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dropboxLink {
+  font-size: 2rem;
+  color: #0070e0;
+  transition: color 0.3s ease;
+}
+
+.dropboxLink:hover {
+  color: #005bb5;
+}

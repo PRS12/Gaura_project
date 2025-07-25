@@ -148,21 +148,43 @@ const TimelineItem = ({ item, isLast }) => {
             )}
           </div>
         )}
-        {item.video && (
-          <motion.div 
-            className={styles.videoContainer}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <video
-              src={item.video}
-              title={item.title}
-              className={styles.videoPlayer}
-              controls
-            />
-          </motion.div>
+        {(item.videos || item.video) && (
+          <div className={styles.videosContainer}>
+            {item.videos ? (
+              item.videos.map((videoSrc, index) => (
+                <motion.div 
+                  key={index}
+                  className={styles.videoContainer}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                >
+                  <video
+                    src={videoSrc}
+                    title={`${item.title} - ${index + 1}`}
+                    className={styles.videoPlayer}
+                    controls
+                  />
+                </motion.div>
+              ))
+            ) : (
+              <motion.div 
+                className={styles.videoContainer}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <video
+                  src={item.video}
+                  title={item.title}
+                  className={styles.videoPlayer}
+                  controls
+                />
+              </motion.div>
+            )}
+          </div>
         )}
         <AnimatePresence>
           {isImageOpen && (

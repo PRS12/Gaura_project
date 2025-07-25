@@ -20,18 +20,17 @@ const timelineData = [
       "/images/kiss_from_my_ma.jpeg",
       "/images/with_papa_mummy.jpeg",
     ],
-    video: "/videos/video_kittu.mp4"
+    videos: ["/videos/video_kittu.mp4"]
   },
   {
     id: 3,
-    title: "A trip to Vrindavan",
+    title: "A trip to Goverdhan and Barsana",
     date: "June 10, 2025",
-    description: "Look at those little feet go!",
+    description: "Look at the beauty of vrindavan and our little angel!!",
     icon: "Vacation",
     images: ['/images/Gover_Fam.jpeg','/images/Goverd01.jpeg','/images/Goverd02.jpeg','/images/Goverd1.jpeg',
          '/images/Gove.jpeg','/images/Gov.jpeg','/images/Goverd5.jpeg','/images/Goverd6.jpeg','/images/Goverd3.jpeg',],
-    video: "/videos/video2_vrindavan.mp4",
-    video:"/videos/radha_rani.mp4"
+    videos: ["/videos/radha_kund.mp4" ,"/videos/radha_rani.mp4"]
   },
   {id:4,
     title: "Mundan Ceremony",
@@ -39,7 +38,7 @@ const timelineData = [
     description: "Mundan Ceremony Video",
     icon: "Celebrate",
     images:['/images/mundaimg01.jpeg','/images/mundan_img1.jpeg'],
-    video:"/videos/mundan.mp4",
+    videos:["/videos/mundan.mp4"],
   },
     {id:5,
     title: "First Driving Lesson",
@@ -47,7 +46,7 @@ const timelineData = [
     description: "Mundan Ceremony Video",
     icon: "Drive",
     images:[ '/images/Drive01.jpeg','/images/Drive02.jpeg','/images/Vacation1.jpeg'],
-    video:"/videos/Drive.mp4",
+    videos:["/videos/Drive.mp4"],
   },
 
 //   {

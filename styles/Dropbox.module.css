@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #f0f2f5;
+  position: relative;
+}
+
+.homeLink {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.homeLink:hover {
+  color: #0070e0;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.storageButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropboxButton {
+  background-color: #0070e0;
+}
+
+.dropboxButton:hover {
+  background-color: #005bb5;
+}
+
+.uploaderContainer {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.uploaderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fileLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.fileLabel:hover {
+  border-color: #0070e0;
+}
+
+.uploadButton {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #0070e0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.uploadButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  margin-top: 1rem;
+  color: #28a745;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.errorMessage {
+  margin-top: 1rem;
+  color: #dc3545;
+}
+
+.googleDriveButton {
+  background-color: #4285f4;
+}
+
+.googleDriveButton:hover {
+  background-color: #357ae8;
+}
+
+.cloudButton {
+  background-color: #6c757d;
+}
+
+.cloudButton:hover {
+  background-color: #5a6268;
+}
